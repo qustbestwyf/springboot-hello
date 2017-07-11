@@ -1,0 +1,86 @@
+server:
+  port: 9000
+  error:
+    path: /error
+security:
+  user:
+    password: 12345678a
+    name: admin
+#mybatis
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  typeAliasesPackage: com.yifengtec.springboot.hello.datasource.model
+  global-config:
+    id-type: 2
+    field-strategy: 2
+    auto-set-db-type: true
+    db-column-underline: true
+    refresh-mapper: true
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+
+
+spring:
+  application:
+    admin:
+      enable: false
+  profiles:
+    active: product
+  
+  mvc:
+    static-path-pattern: /static/**
+  
+  resources:
+    static-locations: classpath:/static/
+    chain:
+      strategy:
+        #content:
+         # enabled: true
+         # paths: /**
+        fixed:
+          enabled: true
+          paths: /js
+          version: v100
+  freemarker:
+    allow-request-override: false
+    allow-session-override: false
+    cache: true
+    charset: UTF-8
+    check-template-location: true
+    content-type: text/html
+    enabled: true
+    expose-request-attributes: false
+    expose-session-attributes: false
+    expose-spring-macro-helpers: true
+    prefer-file-system-access: true
+    suffix: .html
+    order: 1
+    template-loader-path: classpath:/templates/
+    settings:
+      template_update_delay: 0
+      default_encoding: UTF-8
+      url_escaping_charset: UTF-8
+      classic_compatible: true
+      number_format: ### 
+          
+  datasource:
+    url: jdbc:mysql://118.178.140.224:3306/useonline_gold?autoReconnect=true&useSSL=false&useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 12345678a
+    driver-class-name: com.mysql.jdbc.Driver
+---
+spring:
+  profiles: local
+---
+spring:
+  profiles: dev
+---
+spring:
+  profiles: test
+---
+spring:
+  profiles: pre
+---
+spring:
+  profiles: product

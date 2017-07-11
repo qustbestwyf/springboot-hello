@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.2.RELEASE</version>
+	</parent>
+
+
+	<groupId>com.yifengtec</groupId>
+	<artifactId>springboot-hello</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>springboot-hello parent</name>
+	<dependencies>
+	</dependencies>
+	<repositories>
+		<repository>
+			<id>exingcai-deploy-snapshots</id>
+			<name>exingcai internal snapshots repository</name>
+			<url>http://maven.useonline.cn/nexus/content/repositories/snapshots/</url>
+		</repository>
+		<repository>
+			<id>exingcai-3rdparty</id>
+			<name>exingcai internal 3rdparty repository</name>
+			<url>http://maven.useonline.cn/nexus/content/repositories/thirdparty/</url>
+		</repository>
+		<repository>
+			<id>exingcai-deploy-releases</id>
+			<name>exingcai internal release repository</name>
+			<url>http://maven.useonline.cn/nexus/content/repositories/releases/</url>
+		</repository>
+	</repositories>
+	<modules>
+		<module>springboot-hello-web</module>
+	</modules>
+</project>
